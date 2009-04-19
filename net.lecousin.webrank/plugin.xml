@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="net.lecousin.webrank.ui.application.WebRankApplication">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="WebRank"
+            class="net.lecousin.webrank.ui.application.Perspective"
+            id="net.lecousin.webrank.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="Parameters"
+            allowMultiple="false"
+            icon="icons/sample2.gif"
+            class="net.lecousin.webrank.ui.params.ParametersView"
+            id="net.lecousin.webrank.ui.params">
+      </view>
+      <view
+            name="URLs Ranking"
+            allowMultiple="false"
+            icon="icons/sample3.gif"
+            class="net.lecousin.webrank.ui.urlrank.URLRankingView"
+            id="net.lecousin.webrank.ui.urlrank">
+      </view>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="net.lecousin.webrank.application"
+            name="WebRank">
+         <property
+               name="aboutText"
+               value="RCP Mail template created by PDE">
+         </property>
+         <property
+               name="windowImages"
+               value="icons/sample2.gif">
+         </property>
+         <property
+               name="aboutImage"
+               value="product_lg.gif">
+         </property>
+      </product>
+   </extension>
+
+</plugin>
